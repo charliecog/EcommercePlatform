@@ -1,0 +1,30 @@
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 admin-navbar">
+                <div class="col-xs-6 navbar-left-side">
+                    <a href="/adminDashboard/Home"><img src="/img/cookieMonster.png"></a>
+                    <span class="first">Bookie Monster</span>
+                    <span class="second">Admin Dashboard</span>
+                </div>
+                <div class="col-md-6 nav-right">
+                    <div class="col-md-8 navbar-right-side welcome">
+                        <span>Welcome, <?= $_SESSION['user'] ?></span>
+                    </div>
+                    <div class="col-md-4 navbar-right-side">
+                        <a href="/adminDashboard">
+                            <button>Logout</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 home-button">
+                <a href="/adminDashboard/Home">
+                    <button>Home</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,82 @@
+<html>
+<?php include 'adminHead.phtml'; ?>
+<body>
+<?php include 'adminNavbar.phtml'; ?>
+<div class="row find-book">
+    <div class="col-xs-10 col-xs-offset-1 col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+        <div class="result-message"><?php echo $result; ?></div>
+        <div class="col-xs-12 edit-search-box">
+            <form action="" method="get">
+                <div class="col-xs-12 col-sm-9 edit-search-input">
+                    <input id="search-input" type="search" name="search-input" placeholder="Search product..."
+                           value="<?php echo $searchInput ?>">
+                </div>
+                <div class="col-xs-12 col-sm-3 edit-search-button">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-12 edit-recent-results">
+            <h3><?php echo $tableTitle; ?></h3>
+            <?php
+            if (!empty($featuredBooks)) {
+                ?>
+                <form action="" method="post">
+                    <div class="col-xs-12 col-sm-3 col-sm-offset-9 update-featured-button">
+                        <button type="submit">Update</button>
+                    </div>
+                    <table class="book-table featured-table">
+                        <tr>
+                            <th class="col-xs-2">No</th>
+                            <th class="col-xs-7">Book</th>
+                            <th class="col-xs-3">Featured</th>
+                        </tr>
+                        <?php
+
+                        foreach ($featuredBooks as $featuredBook) {
+                            $productNo = $featuredBook['id'];
+                            $title = $featuredBook['title'];
+                            $author = $featuredBook['author'];
+                            if ($featuredBook['format']) {
+                                $format = $featuredBook['format'];
+                            }
+                            $value = $featuredBook['featured']
+                            ?>
+                            <tr>
+                                <td><?php echo $productNo; ?></td>
+                                <td>
+                                    <label
+                                        class="book-title"><?php echo $title ?></label> <?php echo ' by ' . $author; ?>
+                                    <span class="format">(<?= $format; ?>)</span>
+                                </td>
+                                <td class="featured-radio">
+                                    <?php
+                                    if ($value == 1) {
+                                        ?>
+                                        <label><input type="radio" name="featuredBooks[<?php echo $productNo; ?>]"
+                                                      value="1" checked> Yes</label>
+                                        <label><input type="radio" name="featuredBooks[<?php echo $productNo; ?>]"
+                                                      value="0"> No</label>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <label><input type="radio" name="featuredBooks[<?php echo $productNo; ?>]"
+                                                      value="1"> Yes</label>
+                                        <label><input type="radio" name="featuredBooks[<?php echo $productNo; ?>]"
+                                                      value="0" checked> No</label>
+                                        <?php
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                    </table>
+                </form>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+</body>
+</html>

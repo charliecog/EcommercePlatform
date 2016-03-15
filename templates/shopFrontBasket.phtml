@@ -1,0 +1,68 @@
+<html>
+<?php include 'shopHead.phtml'; ?>
+<body>
+<div class="container-fluid">
+    <?php include 'shopFrontNavbar.phtml'; ?>
+    <div class="col-xs-12 basket-container">
+        <h3 class="text-center">Your Basket...</h3>
+        <?php
+        foreach ($booksInABasket as $id => $book) {
+            ?>
+            <div class="row basket-view">
+                <hr class="divider">
+                <div class="col-xs-3 image-small">
+                    <img src="/img/uploadedimg/<?= $book['image']; ?>">
+                </div>
+                <div class="col-xs-9">
+                    <h4 class="title"><?= $book['title']; ?></h4>
+                    <h4>&pound;<?= $book['sellPrice']; ?></h4>
+
+                    <form action="" method="post">
+                        <div class="element-spacing button-inline">
+                            <p><?= $book['author']; ?></p>
+
+                            <p><?= $book['format']; ?></p>
+                            <label>Qty:</label>
+                            <input type="number" name="qty" class="stockContent" value="<?= $book['qty']; ?>" min="0"
+                                   max="<?= $book['maxQtyAllowed']; ?>" step="1" required>
+                        </div>
+                        <div class="element-spacing button-inline">
+                            <input class="quantity-default" type="number" name="productId" value="<?= $id; ?>" hidden>
+                            <input type="submit" value="Update">
+                        </div>
+                        <div class="availability-message"<?php echo($availabilityMessage ? '' : 'hidden'); ?>>
+                            <?= $book['availabilityMessage']; ?>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+        <hr class="divider">
+        <div class="col-xs-12 text-right">
+            <div class="col-xs-8 col-sm-10">
+                <h3>Postage:</h3>
+
+                <h3>Order total:</h3>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <h3>Free</h3>
+
+                <h3>&pound;<?= $totalToPay ?></h3>
+            </div>
+            <form action="/checkout" method="post" class="basket-submit">
+                <?php
+                if (count($_SESSION['basket']['products']) > 0) {
+                    ?>
+                    <input type="submit" value="Checkout">
+                    <input type="number" name="total" value="<?= $totalToPay ?>" min="0.00" step="0.01" hidden>
+                    <?php
+                } ?>
+            </form>
+            <hr class="divider">
+        </div>
+    </div>
+</div>
+</body>
+</html>

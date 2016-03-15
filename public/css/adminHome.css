@@ -1,0 +1,15 @@
+.dashboard-home {
+    margin-top: 40px;
+}
+
+.dashboard-home button {
+    margin: 5px;
+    width: 100%;
+    background-color: #8a6d3b;
+    color: #ffffff;
+    border: 3px solid #000000;
+}
+
+.dashboard-home .logout-button {
+    background-color: #000000;
+}

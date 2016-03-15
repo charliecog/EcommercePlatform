@@ -1,0 +1,13 @@
+.confirmation-container {
+    margin-top: 160px;
+    text-align: center;
+}
+
+.confirmation-container button {
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+}

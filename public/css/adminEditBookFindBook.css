@@ -1,0 +1,56 @@
+.find-book {
+    margin-top: 40px;
+}
+
+.edit-search-input input[id="search-input"] {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    margin-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 2px;
+}
+
+.edit-search-box .edit-search-button button {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #8a6d3b;
+    color: #ffffff;
+    font-size: 1.8rem;
+    border: 3px solid #000000;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.edit-search-box {
+    padding-bottom: 20px;
+    border-bottom: 4px solid #000000;
+}
+
+.book-table {
+    margin-top: 20px;
+    border: 2px solid #000000;
+    width: 100%;
+}
+
+.book-table td {
+    font-size: 1.7rem;
+    padding: 5px;
+}
+
+.book-table td button {
+    border-radius: 5px;
+    background-color: #8a6d3b;
+    color: #ffffff;
+    border: 3px solid #000000;
+    width: 60px;
+}
+
+.delete-button input {
+    border-radius: 5px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 3px solid #000000;
+}

@@ -1,0 +1,12 @@
+
+.mobile-upload-csv-form-msg {
+    display: none;
+}
+
+@media (max-width: 1086px) {
+    .mobile-upload-csv-form-msg {
+        display: block;
+        font-size: 22px;
+        color: #8a6d3b;
+    }
+}

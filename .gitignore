@@ -1,0 +1,8 @@
+/vendor/
+/logs/*
+!/logs/README.md
+.vagrant
+.DS_Store
+.idea
+.project
+.settings

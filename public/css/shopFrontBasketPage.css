@@ -1,0 +1,50 @@
+.image-small {
+    text-align: right;
+}
+
+.basket-container {
+    margin-top: 140px;
+    margin-bottom: 40px;
+}
+
+.basket-view h4 {
+    margin-top: 0px;
+}
+
+.price-small {
+    display: none;
+}
+
+.basket-view input[type="submit"] {
+    margin: 6px;
+    width: 80px;
+    height: 30px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.basket-submit input[type="submit"] {
+    margin: 6px;
+    width: 120px;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+img {
+    height: 100px;
+}
+
+.button-inline {
+    display: inline;
+    margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+    img {
+        height: 180px;
+    }
+}

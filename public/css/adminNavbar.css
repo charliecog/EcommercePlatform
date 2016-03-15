@@ -1,0 +1,69 @@
+.admin-navbar {
+    position: fixed;
+    height: 80px;
+    background-color: #8a6d3b;
+    border-bottom: 10px solid black;
+    color: #ffffff;
+    font-size: 1.8rem;
+    z-index: 2;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.navbar-right-side {
+    text-align: end;
+}
+
+.navbar-left-side img {
+    height: 80px;
+}
+
+.nav-right {
+    height: 100%;
+    padding-top: 25px;
+}
+
+button {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    width: 90px;
+    border: none;
+}
+
+.home-button {
+    margin-top: 100px;
+    margin-left: 25px;
+}
+
+.welcome {
+    display: none;
+}
+
+.first {
+    display: none;
+}
+
+.second {
+    display: none;
+}
+
+@media (min-width: 735px) {
+    .second {
+        display: inline;
+    }
+}
+
+@media (min-width: 992px) {
+    .welcome {
+        display: inline;
+    }
+}
+
+@media (min-width: 1087px) {
+    .first {
+        display: inline;
+    }
+}

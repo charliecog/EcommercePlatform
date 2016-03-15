@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookie Monster Admin Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js" ></script>
+    <script src="../js/validate.js" ></script>
+    <script src="../js/login.js" ></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row admin-login">
+            <div class="col-xs-8 col-sm-6 col-lg-4 col-xs-offset-2 col-lg-offset-4 form-container">
+                <form id="form" action="adminDashboard/Home" method="post">
+                    <h3>Username:</h3>
+                    <input class="requiredContent" type="text" name="username" value="">
+                    <h3>Password:</h3>
+                    <input type="password" name="password" value="">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+.form-container {
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.admin-login {
+    margin-top: 20%;
+    margin-bottom: 10%;
+}
+
+.form-container input {
+    width: 80%;
+    height: 3rem;
+    margin-bottom: 5px;
+}
+
+.form-container input[type="submit"] {
+    width:25%;
+    height: 50px;
+    background-color: #8a6d3b;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-top: 10px;
+}

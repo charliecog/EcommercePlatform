@@ -1,0 +1,45 @@
+.add-book-content {
+    margin-top: 40px;
+}
+
+.add-book-content form input {
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    padding: 4px;
+}
+
+.add-book-content form input[type="submit"] {
+    background-color: #8a6d3b;
+    height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1.8rem;
+    border: 3px solid black;
+    margin-top: 30px;
+}
+
+.add-book-content form textarea {
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+.add-book-content form select {
+    width: 80%;
+}
+
+.result-message {
+    color: #8a6d3b;
+    margin-bottom: 15px;
+}
+
+.no-mobile {
+    display: none;
+}
+
+@media (min-width: 1087px) {
+    .no-mobile {
+        display: inline;
+    }
+}

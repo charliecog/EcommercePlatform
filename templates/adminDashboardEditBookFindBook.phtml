@@ -1,0 +1,69 @@
+<?php
+$tableTitle = 'Most Recently Updated Books...';
+if ($searchInput === '') {
+    $tableTitle = 'Displaying all books...';
+}
+if ($searchInput) {
+    $searchBoxValue = $searchInput;
+    $tableTitle = 'Found ' . count($recentlyUpdatedBooks) . ' results for "' . $searchInput . '":';
+}
+?>
+<html>
+<?php include 'adminHead.phtml'; ?>
+<body>
+<?php include 'adminNavbar.phtml'; ?>
+<div class="row find-book">
+    <div class="col-xs-10 col-xs-offset-1 col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+        <div class="result-message"><?php echo $result;?></div>
+        <div class="col-xs-12 edit-search-box">
+            <form action="" method="get">
+                <div class="col-xs-12 col-sm-9 edit-search-input">
+                    <input id="search-input" type="search" name="search-input" placeholder="Search product...">
+                </div>
+                <div class="col-xs-12 col-sm-3 edit-search-button">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-12 edit-recent-results">
+            <h3><?php echo $tableTitle; ?></h3>
+            <?php
+            if (!empty($recentlyUpdatedBooks)) {
+                ?>
+                <table class="book-table featured-table">
+                    <tr>
+                        <th class="col-xs-2">Product No</th>
+                        <th class="col-xs-5">Title</th>
+                        <th class="col-xs-4">Author</th>
+                        <th class="col-xs-1">Delete</th>
+                    </tr>
+                    <?php
+                    foreach ($recentlyUpdatedBooks as $recentlyUpdatedBook) {
+                        $productNo = $recentlyUpdatedBook['id'];
+                        $title = $recentlyUpdatedBook['title'];
+                        $author = $recentlyUpdatedBook['author'];
+
+                        ?>
+                        <tr>
+                            <td><a href="EditBook/<?php echo $productNo ?>"><?php echo $productNo; ?></a>
+                            </td>
+                            <td><?php echo $title; ?></td>
+                            <td><?php echo $author; ?></td>
+                            <td><form class="delete-button" method="post" action="">
+                                    <input type="text" name="deleteId" value="<?php echo $productNo; ?>" hidden>
+                                    <input type="submit" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </table>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+</div>
+</body>
+</html>

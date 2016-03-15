@@ -1,0 +1,43 @@
+<html>
+<?php include 'adminHead.phtml'; ?>
+<body>
+<?php include 'adminNavbar.phtml'; ?>
+<div class="row find-book">
+    <div class="col-xs-10 col-xs-offset-1 col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+        <div class="result-message">
+            <?php
+            foreach ($results as $row => $result) {
+                foreach ($result as $message) {
+                    if($row == 'failure') {
+                        echo $message;
+                    } else {
+                        echo 'Row no: ' . $row . ' ' . $message . "<br>";
+                    }
+                }
+            }
+            ?>
+        </div>
+        <div class="col-xs-12 col-sm-9 mobile-upload-csv-form-msg">
+            CSV file upload is not available on mobile devices
+        </div>
+        <div class="col-xs-12 edit-search-box no-mobile">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="col-xs-12 col-sm-9 edit-search-input">
+                    <h4>Upload CSV file:</h4>
+                    <h6>(max 2MB)</h6>
+                    <input type="file" name="csv" id="fileToUpload" enctype="multipart/form-data">
+                </div>
+                <div class="col-xs-12 col-sm-3 edit-search-button">
+                    <button type="submit">Upload</button>
+                </div>
+            </form>
+        </div>
+        <div class="result-message">
+            Please note: rows which do not pass validation will not been uploaded.<br>
+            To avoid duplicate book entries, please do not upload the whole file again, only the rows that have been
+            flagged as invalid.
+        </div>
+    </div>
+</div>
+</body>
+</html>

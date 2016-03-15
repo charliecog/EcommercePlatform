@@ -1,0 +1,92 @@
+.image-slider {
+    margin-top: 140px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.my-slider img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-medium {
+    display: none;
+}
+
+.gallery-large {
+    display: none;
+}
+
+.product-grid {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 150px;
+}
+
+.book-homepage {
+    margin-top: 15px;
+    text-align: center;
+    min-height: 750px;
+    position: relative;
+}
+
+.book-homepage button {
+    margin: 6px;
+    width: 50%;
+    height: 45px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.headline-message {
+    text-align: center;
+}
+
+.book-image {
+    height: 400px;
+}
+
+.book-homepage input[type="submit"] {
+    margin: 6px;
+    width: 50%;
+    height: 45px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.book-image img {
+    height: 100%;
+}
+
+.fix {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    height: 160px;
+    display: none;
+}
+
+.action-buttons {
+    bottom: 0;
+    position: absolute;
+}
+
+@media (min-width: 900px) {
+    .fix {
+        display: inline;
+    }
+}
+
+@media (min-width: 992px) {
+    .gallery-medium {
+        display: inline;
+    }
+}
+
+@media (min-width: 1140px) {
+    .gallery-large {
+        display: inline;
+    }
+}

@@ -1,0 +1,60 @@
+.checkout-container {
+    margin-top: 110px;
+}
+
+.checkout-container input {
+    height: 50px;
+    margin-bottom: 8px;
+    border: 1px solid #5e5e5e;
+    border-radius: 5px;
+}
+
+.checkout-container p {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.checkout-container .different-billing-button {
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.checkout-container .different-billing-button p {
+    margin-top: 7px;
+    font-weight: normal;
+}
+
+.checkout-container #checkout-form select {
+    height: 40px;
+    margin-top: 8px;
+}
+
+.different-billing {
+    display: none;
+}
+
+.alternate-address {
+    margin-top: 8px;
+}
+
+.complete-order input[type="submit"] {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.err {
+    color: red;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .checkout-container .different-billing-button p {
+        margin-top: 14px;
+    }
+}

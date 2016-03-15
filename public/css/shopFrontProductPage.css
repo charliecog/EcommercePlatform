@@ -1,0 +1,99 @@
+.product-view {
+    text-align: center;
+}
+
+.book-product-page {
+    margin-top: 140px;
+    margin-bottom: 40px;
+}
+
+.book-product-page button {
+    margin: 6px;
+    width: 50%;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.book-product-page input[type="submit"] {
+    margin: 6px;
+    width: 50%;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.element-spacing {
+    margin-top: 15px;
+}
+
+.book-product-page input[type = 'number'] {
+    width: 60px;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.format-button button {
+    background-color: #38a2d0;
+    width: 50%;
+}
+
+.author {
+    color: #818a91;
+    font-style: italic;
+}
+
+.product-info {
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 5px solid #eee;
+}
+
+.product-info-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.description {
+    text-align: justify;
+    padding: 0px 40px;
+}
+
+.availability-message, .maxQtyReachedMsg {
+    color: #ee0000;
+}
+
+@media (min-width: 992px) {
+    .format-button button {
+        width: 100px;
+        margin-top: 0px;
+    }
+    .product-info {
+        text-align: left;
+        padding: 10px 40px;
+        font-size: 18px;
+        border-right: 5px solid #eee;
+        border-bottom: none;
+    }
+}
+
+@media (min-width: 1080px) {
+    .element-spacing {
+        margin-top: 15px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .paperback {
+        text-align: right;
+    }
+
+    .hardback {
+        text-align: left;
+    }
+}

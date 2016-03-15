@@ -1,0 +1,35 @@
+<html>
+<?php include 'adminHead.phtml'; ?>
+<body>
+<?php include 'adminNavbar.phtml'; ?>
+<div class="row dashboard-home">
+    <div class="col-xs-8 col-xs-offset-2">
+        <div class="col-xs-12">
+            <a href="/adminDashboard/AddBook">
+                <button class="btn-lg">Add new book</button>
+            </a>
+        </div>
+        <div class="col-xs-12">
+            <a href="/adminDashboard/EditBook">
+                <button class="btn-lg">Edit existing book</button>
+            </a>
+        </div>
+        <div class="col-xs-12">
+            <a href="/adminDashboard/ManageFeatured">
+                <button class="btn-lg">Manage featured books</button>
+            </a>
+        </div>
+        <div class="col-xs-12 no-mobile">
+            <a href="/adminDashboard/csvUpload">
+                <button class="btn-lg">Upload books from CSV file</button>
+            </a>
+        </div>
+        <div class="col-xs-12">
+            <a href="/adminDashboard">
+                <button class="btn-lg logout-button">Log out</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

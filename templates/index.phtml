@@ -1,0 +1,124 @@
+<html>
+<?php include 'shopHead.phtml'; ?>
+<body>
+<div class="container-fluid">
+    <?php include 'shopFrontNavbar.phtml'; ?>
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-4 image-slider">
+            <div class="my-slider">
+                <ul>
+                    <?php foreach ($featuredBooks as $key => $featuredBook) {
+                        ?>
+                        <li class="book-image"><a href="/product/<?php echo $featuredBook['id'] ?>"><img
+                                    src="/img/uploadedimg/<?= $featuredBook['image'] ?>"></a></li>
+                        <?php
+                    }
+                    $lastValue = array_shift($featuredBooks);
+                    array_push($featuredBooks, $lastValue);
+                    ?>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 image-slider gallery-medium">
+            <div class="my-slider">
+                <ul>
+                    <?php foreach ($featuredBooks as $key => $featuredBook) {
+                        ?>
+                        <li class="book-image"><a href="/product/<?php echo $featuredBook['id'] ?>"><img
+                                    src="/img/uploadedimg/<?= $featuredBook['image'] ?>"></a></li>
+                        <?php
+                    }
+                    $lastValue = array_shift($featuredBooks);
+                    array_push($featuredBooks, $lastValue);
+                    ?>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 image-slider gallery-large">
+            <div class="my-slider">
+                <ul>
+                    <?php foreach ($featuredBooks as $key => $featuredBook) {
+                        ?>
+                        <li class="book-image"><a href="/product/<?php echo $featuredBook['id'] ?>"><img
+                                    src="/img/uploadedimg/<?= $featuredBook['image'] ?>"></a></li>
+                        <?php
+                    }
+                    $lastValue = array_shift($featuredBooks);
+                    array_push($featuredBooks, $lastValue);
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="row">
+        <div class="col-xs-12 headline-message">
+            <h2>Shop from over <?php echo(count($allBooks) - 1); ?> books online!</h2>
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="row product-grid">
+        <?php
+        foreach ($allBooks as $book) {
+            if ($book['format_id'] == 1) {
+                $format = 'Hardcover';
+            }
+            if ($book['format_id'] == 2) {
+                $format = 'Paperback';
+            }
+            ?>
+            <div id="<?php echo $book['id']; ?>" class="col-xs-12 col-md-6 col-lg-4 book-homepage">
+                <div class="col-xs-12">
+                    <a href="/product/<?php echo $book['id'] ?>"><img class="book-image"
+                                                                      src="/img/uploadedimg/<?= $book['image'] ?>"></a>
+
+                    <div class="title-length-control">
+                        <a href="/product/<?php echo $book['id'] ?>"><h3><?= mb_strimwidth(
+                                    $book['title'],
+                                    0,
+                                    40,
+                                    "..."
+                                ) ?></h3></a>
+                    </div>
+                    <h4><?= $book['author'] ?></h4>
+                    <h6>(<?= $format ?>)</h6>
+                    <h4>&pound;<?= $book['sell_price'] ?></h4>
+                </div>
+                <div class="col-xs-12 action-buttons">
+                    <a href="/product/<?php echo $book['id'] ?>">
+                        <button>See More Product Info</button>
+                    </a>
+
+                    <div class="col-xs-12 element-spacing">
+                        <form action="/#<?php echo $book['id']; ?>" method="post">
+                            <input class="quantity-default" type="number" name="qty" value="1" hidden>
+                            <input class="quantity-default" type="number" name="productId"
+                                   value="<?php echo $book['id'] ?>"
+                                   hidden>
+                            <?php
+                            if ($book['stock_level']) {
+                                ?>
+                                <input type="submit" value="Add To Basket">
+                                <?php
+                            } else {
+                                ?>
+                                <input type="submit" value="Out Of Stock" disabled>
+                                <?php
+                            }
+                            ?>
+                            <hr class="divider">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+    <?php include 'shopFooter.phtml'; ?>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/js/unslider.js"></script>
+</div>
+</body>
+</html>
+
